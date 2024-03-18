@@ -1,3 +1,3 @@
-# `@napi-rs/package-template-darwin-arm64`
+# `node-printer-rust-darwin-arm64`
 
-This is the **aarch64-apple-darwin** binary for `@napi-rs/package-template`
+This is the **aarch64-apple-darwin** binary for `node-printer-rust`
