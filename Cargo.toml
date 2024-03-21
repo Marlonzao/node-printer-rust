@@ -10,6 +10,7 @@ version = "0.1.0"
 crate-type = ["cdylib"]
 
 [dependencies]
+marlon-printers = "2.0.0"
 napi        = "2"
 napi-derive = "2"
 printers = "2.0.0"
