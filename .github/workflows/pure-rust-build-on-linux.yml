@@ -45,7 +45,7 @@ jobs:
         uses: goto-bus-stop/setup-zig@v1
         with:
           version: 0.11.0
-      - run: apt update && apt install -y cups libcups2-dev
+      - run: sudo apt update && sudo apt install -y cups libcups2-dev
       - run: cargo install cargo-xwin
       - run: yarn install
       - run: yarn build --target ${{ matrix.targets }}
