@@ -51,7 +51,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: bindings-${{ matrix.targets }}
-          path: 01-pure-rust/*.node
+          path: node-printer-rust/*.node
           if-no-files-found: error
   test-host:
     strategy:
@@ -91,7 +91,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: bindings-${{ matrix.settings.target }}
-          path: 01-pure-rust/
+          path: node-printer-rust/
       - name: Run tests
         run: yarn test
   test-docker:
@@ -123,13 +123,15 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
+      - name: Install cups
+        run: apt update && apt install -y cups libcups2-dev
       - name: Install dependencies
         run: yarn install
       - name: Download bindings
         uses: actions/download-artifact@v4
         with:
           name: bindings-${{ matrix.settings.target }}
-          path: 01-pure-rust/
+          path: node-printer-rust/
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
         with:
