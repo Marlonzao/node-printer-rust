@@ -1,5 +1,5 @@
 var printer_helper = require('./index.js');
-console.log(printer_helper)
+console.log(printer_helper.getPrinters());
 
 // /** Return all installed printers including active jobs
 //  */

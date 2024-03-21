@@ -271,7 +271,7 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { plus100, printDirect } = nativeBinding
+const { getPrinters, print } = nativeBinding
 
-module.exports.plus100 = plus100
-module.exports.printDirect = printDirect
+module.exports.getPrinters = getPrinters
+module.exports.print = print
