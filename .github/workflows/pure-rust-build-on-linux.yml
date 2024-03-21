@@ -47,7 +47,7 @@ jobs:
           version: 0.11.0
       - run: cargo install cargo-xwin
       - run: yarn install
-      - run: yarn workspace @napi-cross-build/01-pure-rust build --target ${{ matrix.targets }}
+      - run: yarn build --target ${{ matrix.targets }}
       - uses: actions/upload-artifact@v4
         with:
           name: bindings-${{ matrix.targets }}
@@ -93,7 +93,7 @@ jobs:
           name: bindings-${{ matrix.settings.target }}
           path: 01-pure-rust/
       - name: Run tests
-        run: yarn workspace @napi-cross-build/01-pure-rust test
+        run: yarn test
   test-docker:
     strategy:
       fail-fast: false
@@ -142,4 +142,4 @@ jobs:
           options: ${{ matrix.settings.args }} -v ${{ github.workspace }}:/build -w /build
           run: |
             set -e
-            yarn workspace @napi-cross-build/01-pure-rust test
+            yarn test
