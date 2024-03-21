@@ -24,10 +24,6 @@ jobs:
             'x86_64-unknown-linux-gnu',
             'aarch64-unknown-linux-gnu',
             'x86_64-unknown-linux-musl',
-            'aarch64-unknown-linux-musl',
-            'armv7-unknown-linux-gnueabihf',
-            'aarch64-linux-android',
-            'armv7-linux-androideabi',
           ]
     runs-on: ubuntu-latest
     steps:
@@ -45,14 +41,14 @@ jobs:
         uses: goto-bus-stop/setup-zig@v1
         with:
           version: 0.11.0
-      - run: sudo apt update && sudo apt install -y cups libcups2-dev
+      - run: sudo apt update && sudo apt install -y cups libcups2-dev libcups2
       - run: cargo install cargo-xwin
       - run: yarn install
       - run: yarn build --target ${{ matrix.targets }}
       - uses: actions/upload-artifact@v4
         with:
           name: bindings-${{ matrix.targets }}
-          path: node-printer-rust/*.node
+          path: *.node
           if-no-files-found: error
   test-host:
     strategy:
