@@ -110,5 +110,20 @@
   "packageManager": "yarn@4.1.1",
   "dependencies": {
     "@napi-rs/package-template": "^1.0.0"
+  },
+  "optionalDependencies": {
+    "node-printer-rust-win32-x64-msvc": "1.0.0",
+    "node-printer-rust-darwin-x64": "1.0.0",
+    "node-printer-rust-linux-x64-gnu": "1.0.0",
+    "node-printer-rust-linux-x64-musl": "1.0.0",
+    "node-printer-rust-linux-arm64-gnu": "1.0.0",
+    "node-printer-rust-win32-ia32-msvc": "1.0.0",
+    "node-printer-rust-linux-arm-gnueabihf": "1.0.0",
+    "node-printer-rust-darwin-arm64": "1.0.0",
+    "node-printer-rust-android-arm64": "1.0.0",
+    "node-printer-rust-freebsd-x64": "1.0.0",
+    "node-printer-rust-linux-arm64-musl": "1.0.0",
+    "node-printer-rust-win32-arm64-msvc": "1.0.0",
+    "node-printer-rust-android-arm-eabi": "1.0.0"
   }
 }
